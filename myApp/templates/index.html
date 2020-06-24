@@ -1,0 +1,324 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+
+	<!-- title -->
+    <link rel="shortcut icon" href="{% static 'assets/images/genghiscode-logo.ico' %}" />
+	<title>GenghisCode</title>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+	  <style type="text/css">
+		  #painel{
+
+			background: white;
+			width: 100%;
+			height:450px;
+			text-align: center;
+
+			margin-top: 30px;
+			margin-bottom: 20px;
+
+			background-image: url("{% static 'assets/images/hero-img.png' %}"), url("{% static 'assets/images/hero-bg.png' %}");
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			color:white;
+		}
+	  </style>
+	  <style>
+		   .error{
+				 color:red
+		   }
+	  </style>
+
+  </head>
+  <body>
+
+   <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar10">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="navbar-collapse collapse" id="navbar10">
+
+				<ul class="navbar-nav nav-fill w-100">
+
+					<!-- Image and text -->
+					<li class="nav-item">
+						<a class="nav-link" href="#"><strong></strong><img src="{% static 'assets/images/genghiscode-logo.jpg' %}" width="40" height="40" class="d-inline-block align-center" alt=""><strong>GenghisCode</strong></a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#servico">Serviços</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="#sobre">Sobre</a>
+					</li>
+					<!--<li class="nav-item">
+						<a class="nav-link" href="#"><b>Portifólio</b></a>
+					</li>-->
+					<li class="nav-item">
+						<a class="nav-link" href="#contato">Contato</a>
+					</li>
+
+				</ul>
+			</div>
+
+	</nav>
+
+
+	<!-- Nav Bar END-->
+
+
+<div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
+
+	<div class="row" id="pai">
+		<div class="col-md-1"></div>
+		<div id="painel2" class="col-md-4">
+			<h1>Projetamos produtos digitais que ajudam a expandir os negócios</h1>
+            <h2>Somos uma equipe de designers talentosos que criam sites</h2>
+		</div>
+		<div id="painel" class="col-md-7"></div>
+	</div>
+
+
+	<!-- Sobre START-->
+	<div id="sobre">
+
+		<div class="titulo"><h1><span>Sobre</span></h1></div>
+
+		<div class="row justify-content-md-center">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<p class="sobre">Acreditamos em uma experiência única entre a marca do cliente e as pessoas que a vêem por meio da internet.</p>
+				<p class="sobre">Hoje o seu cartão visita esta disponível 24 horas por dia por meio web sites. Nos contate, será um prazer entendermos o que você deseja mostrar para o mundo e o quão criativa são suas idéias.</p>
+				<p class="sobre">Desenvolvemos sites para que possamos relizar nossos sonhos juntos.</p>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+	</div>
+	<!-- Sobre END-->
+
+	<div id="servico">
+
+		<div class="titulo"><h1><span>Serviços</span></h1></div>
+			<div class="container">
+		<!-- Servições START-->
+				<div class="row justify-content-md-center">
+
+				  <div class="col-md-6">
+
+					<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SEO</font></font></h3>
+
+					<font style="vertical-align: inherit;">
+						<p>A melhor forma de seu site ser encontrado por internautas de todo mundo é utilizar o Google como seu principal parceiro.</p>
+						<p> Seja um blog, site institucional ou e-commerce, é vital que sua página na internet tenha uma boa classificação nas pesquisas do maior buscador do mundo. Isso certamente lhe trará inúmeros interessados no que você tem a oferecer.</p>
+					</font>
+
+					<img src="{% static 'assets/images/engrenagem.svg' %}" width="70" height="80" class="d-inline-block align-center" alt="">
+
+				  </div>
+
+				  <div class="col-md-6">
+
+					<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Web Sites</font></font></h3>
+
+						<font style="vertical-align: inherit;">
+
+								<p>A criação de site é indicada para todo tipo de empresa, seja ela de pequeno, médio ou grande porte.</p>
+								<p>Hoje em dia é indispensável ter uma página na web, por isso, nós buscamos primeiramente entender a sua necessidade para depois oferecer a opção mais adequada à você.</p>
+
+						</font>
+
+						<img src="{% static 'assets/images/web-page.svg' %}" x="50%" y="50%" width="70" height="80" class="d-inline-block align-center" alt="">
+				  </div>
+
+				</div>
+			</div>
+
+	</div>
+
+
+
+<hr>
+  <!-- Servições END -->
+
+
+
+	<!-- contact info -->
+	<div class="container" id="contato">
+		<div class="row justify-content-md-center">
+			<h1><span>Contatos</span></h1>
+		</div>
+	</div>
+
+	{% if messages %}
+
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+		  {% for message in messages %}<strong></strong>{{ message }}{% endfor %}
+		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+<!--			<div id="alerta_mensagem">-->
+<!--			</div>-->
+
+	{% endif %}
+
+
+	<div class="row">
+			<div class="col-1">
+			</div>
+
+			<div class="col-10">
+
+				<form class="form-horizontal" id="form_contato" method="post">
+					{% csrf_token %}
+					{% for error in form.non_field_errors %}
+						<div class="alert alert-danger">{{ error }}</div>
+					{% endfor %}
+					<div class="row">
+
+						<div class="col-md-12">
+							<div class="form-group{% if form.subject.errors %} has-error {% endif %}">
+								<label for="{{ form.subject.auto_id }}"> {{ form.subject.label }}:</label>
+								{% render_field form.subject class="form-control" %}
+
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="form-group{% if form.name.errors %} has-error {% endif %}">
+								<label for="{{ form.name.auto_id }}"> {{ form.name.label }}:</label>
+								{% render_field form.name class="form-control" %}
+
+							</div>
+						</div>
+
+
+						<div class="col-md-6">
+							<div class="form-group{% if form.email.errors %} has-error {% endif %}">
+								<label for="{{ form.email.auto_id }}"> {{ form.email.label }}:</label>
+								{% render_field form.email class="form-control" %}
+							</div>
+						</div>
+
+						<div class="col-md-12">
+							<div class="form-group{% if form.message.errors %} has-error {% endif %}">
+								<label for="{{ form.message.auto_id }}"> {{ form.message.label }}:</label>
+								{% render_field form.message class="form-control" %}
+							</div>
+						</div>
+
+
+						<div class="col-md-12">
+						   <div class="form-group">
+						  		<button type="submit" class="btn btn-secondary btn-lg">Enviar</button>
+						   </div>
+						</div>
+					</div>
+
+				</form>
+
+
+
+		</div>
+		<div class="col-1">
+		</div>
+	</div>
+</div>
+	<!-- row -->
+
+	<!-- Footer -->
+	<footer class="mainfooter" role="contentinfo">
+	  <div class="footer-middle">
+	  <div class="container">
+
+		<div class="row">
+
+		  <div class="col-md-4 col-sm-6">
+			<!--Column1-->
+			<div class="footer-pad">
+			  <h4>Contato</h4>
+			  <ul class="list-unstyled">
+				<li><a href="#"></a></li>
+				<li><a href="#"><span class="fa fa-phone" aria-hidden="true"></span> (011) 96354-0902</a></li>
+				<li><a href="#"><span class="fa fa-envelope" aria-hidden="true"></span>  io.vitor.r@gmail.com</a></li>
+
+			  </ul>
+			</div>
+		  </div>
+
+		  <div class="col-md-4 col-sm-6">
+			<!--Column1-->
+			<div class="footer-pad">
+			  <h4>Links Úteis</h4>
+			  <ul class="list-unstyled">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Serviços</a></li>
+				<li><a href="#">Sobre</a></li>
+				<!--<li><a href="#">Privacy Policy</a></li>-->
+				<li><a href="#">Contato</a></li>
+			  </ul>
+			</div>
+		  </div>
+
+			<div class="col-md-4">
+				<h4>Siga-Nos</h4>
+				<ul class="social-network social-circle">
+				 <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+				 <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 copy">
+				<p class="text-center">&copy; Copyright 2020 - GenghisCode.  All rights reserved.</p>
+			</div>
+		</div>
+
+
+	  </div>
+	  </div>
+	</footer>
+
+<!-- Footer -->
+
+    <!-- JavaScript (Opcional) -->
+    <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
+    <!--
+   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+<!-- Inclusão do Plugin jQuery Validation-->
+<script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+<script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+<script src="{% static 'assets/js/validacao.js' %}"></script>
+
+</script>
+
+
+  </body>
+</html>
