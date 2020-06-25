@@ -35,7 +35,7 @@ urlpatterns = [
     path('', indexView, name='index'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-handler404 = 'myApp.views.error_404'
 handler50x = 'myAapp.views.error_500'
+handler404 = 'myApp.views.error_404'
 handler403 = 'myApp.views.error_403'
 handler400 = 'myApp.views.error_400'
