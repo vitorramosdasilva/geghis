@@ -3,9 +3,9 @@ from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from myApp.forms import ContatoForm
 from django.shortcuts import render
+from django.conf import settings
 
 
-# sendemail/views.py
 def indexView(request):
     if request.method == 'GET':
         form = ContatoForm()
@@ -13,13 +13,21 @@ def indexView(request):
     else:
         form = ContatoForm(request.POST)
         if form.is_valid():
+            name = form.cleaned_data['name']
             subject = form.cleaned_data['subject']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
+            message = 'Assunto: ' + subject + '\n' + 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Messagem: ' + message
             messages.success(request, 'E-mail enviado com sucesso.\nRetornaremos em até 48 horas úteis.')
             try:
-                send_mail(subject, message, email, ['io.vitor.r@gmail.com'])
-                form = ContatoForm()
+                send_mail(subject,
+                          message,
+                          settings.EMAIL_HOST_USER,
+                          [settings.EMAIL_HOST_USER],
+                          fail_silently=False
+                          )
+
+                form = ContatoForm
             except BadHeaderError:
                 messages.error(request, 'Erro ao enviar e-mail.\nTente Novamente e revise o conteúdo.')
             return render(request, "index.html", {'form': form})

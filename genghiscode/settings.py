@@ -7,7 +7,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
-
 import dj_database_url
 import os
 
@@ -25,7 +24,7 @@ TEMPLATE_DIRS = (
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 
 # Application definition
 
@@ -133,9 +132,60 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-SECRET_KEY = os.environ['SECRET_KEY']
+
+# SECRET_KEY = os.environ['SECRET_KEY']
+SECRET_KEY = 'vpflk7%)=x9s@)gm3dxq$4*l7h378ze2a@wk56(^s1=3fwohbd'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
+
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'genghiscode_sendgrid'
+# # EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+# EMAIL_HOST_PASSWORD = SECRET_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# SENDGRID_USERNAME = 'app175567528@heroku.com'
+# SENDGRID_PASSWORD = 'ler8lljy3599'
+
+# DEFAULT_FROM_EMAIL = 'contato@genghiscode.com.br'
+# EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+# SEND_GRID_API_KEY = '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'
+# SENDGRID_SANDBOX_MODE_IN_DEBUG = False
+# SENDGRID_ECHO_TO_STDOUT = True
+#
+#
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'parsifal_app'
+# EMAIL_HOST_PASSWORD = 'mys3cr3tp4ssw0rd'
+# EMAIL_USE_TLS = True
+
+# EMAIL_HOST = 'smtp.zoho.com'
+# EMAIL_USE_TLS = True
+# EMAIL_USE_SSL = False
+# EMAIL_PORT = 465
+# EMAIL_HOST_USER = 'contato@genghiscode.com.br'
+# EMAIL_HOST_PASSWORD = 'Amcom@219'
+
+# Twilio SendGrid
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'genghiscode_sendgrid'
+# EMAIL_HOST_PASSWORD = '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'
+# DEFAULT_FROM_EMAIL = 'contato@genghiscode.com.br'
+
+# DEFAULT_FROM_EMAIL = os.getenv("DEFAULT_FROM_EMAIL", "")
+# SEND_GRID_SANDBOX_MODE_IN_DEBUG = False
+
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'contato@genghiscode.com.br'
+EMAIL_HOST_PASSWORD = 'kurRrqPEcmpN'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 try:
     from .local_settings import *
