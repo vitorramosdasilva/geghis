@@ -24,7 +24,7 @@ TEMPLATE_DIRS = (
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
+DEBUG = False
 
 # Application definition
 
