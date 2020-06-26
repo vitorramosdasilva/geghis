@@ -14,15 +14,6 @@ html, body {
   height:80%;
 }
 
-#imagem {
-  width:80%;
-  height:90%;
-  background-image: url('../images/erro-404.jpg');
-  background-size: 90% 90%;
-  background-repeat: no-repeat;
-  margin: 0 auto;
-
-}
 
 button {
     width: 30%;
