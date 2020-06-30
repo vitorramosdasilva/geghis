@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    # 'sslify.middleware.SSLifyMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -120,7 +121,6 @@ DATABASES = {
 
 # SECRET_KEY = os.environ['SECRET_KEY']
 SECRET_KEY = 'vpflk7%)=x9s@)gm3dxq$4*l7h378ze2a@wk56(^s1=3fwohbd'
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 # Zoho Email Settings ...
@@ -131,11 +131,16 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# TEMPLATE_DIRS = (
-#     os.path.join(SETTINGS_PATH, 'templates'),
-# )
-# Twilio SendGrid
 
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+# SSLIFY_PORT = 999
+# SSLIFY_DISABLE = True
+
+
+# SSLIFY_DISABLE_FOR_REQUEST = [
+#     lambda request: request.get_full_path().startswith('/no_ssl_please')
+# ]
 
 try:
     from .local_settings import *
