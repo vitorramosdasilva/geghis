@@ -23,6 +23,10 @@ SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 DEBUG = False
 
+SECRET_KEY = 'vpflk7%)=x9s@)gm3dxq$4*l7h378ze2a@wk56(^s1=3fwohbd'
+
+ALLOWED_HOSTS = ['*']
+
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -108,8 +112,26 @@ STATIC_URL = '/static/'
 ADMIN_MEDIA_PREFIX = '/static/admin/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 
-ALLOWED_HOSTS = ['*']
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'genghiscode',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+# Zoho Email Settings ...
+EMAIL_HOST = 'smtp.zoho.com'
+EMAIL_HOST_USER = 'contato@genghiscode.com.br'
+EMAIL_HOST_PASSWORD = 'kurRrqPEcmpN'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 try:
     from .local_settings import *
