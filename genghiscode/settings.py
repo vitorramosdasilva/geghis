@@ -128,7 +128,7 @@ DATABASES = {
 # Zoho Email Settings ...
 EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_HOST_USER = 'contato@genghiscode.com.br'
-EMAIL_HOST_PASSWORD = 'kurRrqPEcmpN'
+EMAIL_HOST_PASSWORD = 'b7G9jTj9wmqa'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
