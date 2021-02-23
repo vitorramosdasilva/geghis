@@ -18,12 +18,10 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
-# SECURITY WARNING: don't run with debug turned on in production!
-
 DEBUG = False
 
-SECRET_KEY = 'vpflk7%)=x9s@)gm3dxq$4*l7h378ze2a@wk56(^s1=3fwohbd'
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = os.environ.get('SECRET_KEY', 'ABCX')
 
 ALLOWED_HOSTS = ['*']
 
@@ -126,12 +124,13 @@ DATABASES = {
 }
 
 # Zoho Email Settings ...
-EMAIL_HOST = 'smtp.zoho.com'
-EMAIL_HOST_USER = 'contato@genghiscode.com.br'
-EMAIL_HOST_PASSWORD = 'b7G9jTj9wmqa'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
+EMAIL_HOST = os.environ.get('EMAIL_HOST')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.environ.get('EMAIL_PORT')
+EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 
 try:
     from .local_settings import *

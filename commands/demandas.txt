@@ -1,0 +1,2 @@
+- 1 alterar seguranca variaveis de ambiente
+2 - capthcha send mail ..
