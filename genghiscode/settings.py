@@ -18,8 +18,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
-# DEBUG = True
-DEBUG = os.environ.get("DEBUG", True)
+DEBUG = True
+# DEBUG = os.environ.get("DEBUG", True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'ABCX')
