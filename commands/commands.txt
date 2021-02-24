@@ -10,7 +10,7 @@ python3 manage.py makemigrations
 python manage.py migrate --fake-initial
 
 
-
+pip freeze > requirements.txt
 python3 manage.py collectstatic
 
 python3 manage.py runserver
