@@ -1,5 +1,6 @@
 from django import forms
 from django.core.mail.message import EmailMessage
+from captcha.fields import CaptchaField
 
 
 class ContatoForm(forms.Form):
