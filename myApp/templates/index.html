@@ -41,6 +41,9 @@
 		   .error{
 				 color:red
 		   }
+			span ul{
+            list-style-type: none;
+           }
 	  </style>
 
   </head>
@@ -226,12 +229,15 @@
 							</div>
 						</div>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<script src='https://www.google.com/recaptcha/api.js'></script>
-    							<div class="g-recaptcha" data-sitekey="6LfgXGUaAAAAALU2LxIhjAtsZd8bpOo0-N9kBcHj"></div>
-							</div>
-						</div>
+	    					<div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="{{ form.captcha.auto_id }}"></label>
+                                    {% render_field form.captcha class="form-control" %}
+                                    {% if form.captcha.errors %}
+                                        <span class="error"> {{ form.captcha.errors }} </span>
+                                    {% endif %}
+                                </div>
+                            </div>
 
 						<div class="col-md-12">
 						   <div class="form-group">
@@ -241,6 +247,7 @@
 					</div>
 
 				</form>
+				<div class="g-recaptcha" data-sitekey="{{ public_key }}" data-callback="recaptchaCallback" data-expired-callback="recaptchaExpiredCallback"></div>
 
 
 
