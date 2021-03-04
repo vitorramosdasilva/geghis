@@ -18,7 +18,8 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 SETTINGS_PATH = os.path.dirname(os.path.dirname(__file__))
 
 # Quick-start development settings - unsuitable for production
-DEBUG = os.environ.get("DEBUG", True)
+DEBUG = True
+# DEBUG = os.environ.get("DEBUG", True)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY', 'ABCX')
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     # libs
     'widget_tweaks',
     'myApp',
+    'captcha',
 ]
 
 MIDDLEWARE = [
@@ -131,7 +133,9 @@ EMAIL_PORT = os.environ.get('EMAIL_PORT')
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
-
+RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
+RECAPTCHA_PRIVATE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
+NOCAPTCHA = True
 
 try:
     from .local_settings import *
