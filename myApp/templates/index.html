@@ -11,6 +11,7 @@
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Genghiscode - Desenvolvimento Web">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -40,6 +41,9 @@
 		   .error{
 				 color:red
 		   }
+			span ul{
+            list-style-type: none;
+           }
 	  </style>
 
   </head>
@@ -92,6 +96,7 @@
 		<div id="painel2" class="col-md-4">
 			<h1>Projetamos produtos digitais que ajudam a expandir os negócios</h1>
             <h2>Somos uma equipe de designers talentosos que criam sites</h2>
+			</br>
 		</div>
 		<div id="painel" class="col-md-7"></div>
 	</div>
@@ -224,12 +229,15 @@
 							</div>
 						</div>
 
-						<div class="col-md-12">
-							<div class="form-group">
-								<script src='https://www.google.com/recaptcha/api.js'></script>
-    							<div class="g-recaptcha" data-sitekey="6LeqU2UaAAAAAFJhpa4UC_QbERXtPqDx_7PsFFxf"></div>
-							</div>
-						</div>
+	    					<div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="{{ form.captcha.auto_id }}"></label>
+                                    {% render_field form.captcha class="form-control" %}
+                                    {% if form.captcha.errors %}
+                                        <span class="error"> {{ form.captcha.errors }} </span>
+                                    {% endif %}
+                                </div>
+                            </div>
 
 						<div class="col-md-12">
 						   <div class="form-group">
@@ -239,6 +247,7 @@
 					</div>
 
 				</form>
+				<div class="g-recaptcha" data-sitekey="{{ public_key }}" data-callback="recaptchaCallback" data-expired-callback="recaptchaExpiredCallback"></div>
 
 
 
@@ -264,7 +273,7 @@
 			  <ul class="list-unstyled">
 				<li><a href="#"></a></li>
 				<li><a href="#"><span class="fa fa-phone" aria-hidden="true"></span> (011) 96354-0902</a></li>
-				<li><a href="#"><span class="fa fa-envelope" aria-hidden="true"></span> contato@genghiscode.com.br</a></li>
+				<li><a href="#"><span class="fa fa-envelope" aria-hidden="true"></span>contato@genghiscode.com.br</a></li>
 
 			  </ul>
 			</div>
@@ -291,7 +300,9 @@
 				 <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
 				</ul>
 			</div>
+
 		</div>
+		</br>
 		<div class="row">
 			<div class="col-md-12 copy">
 				<p class="text-center">&copy; Copyright 2020 - GenghisCode.  All rights reserved.</p>

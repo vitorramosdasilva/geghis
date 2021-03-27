@@ -1,6 +1,6 @@
 from django import forms
 from django.core.mail.message import EmailMessage
-
+from captcha.fields import ReCaptchaField
 
 class ContatoForm(forms.Form):
     name = forms.CharField(
@@ -32,5 +32,6 @@ class ContatoForm(forms.Form):
         min_length=10,
         max_length=400
     )
+    captcha = ReCaptchaField()
 
 
