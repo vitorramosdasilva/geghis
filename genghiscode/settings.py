@@ -134,8 +134,7 @@ EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS')
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
 GOOGLE_RECAPTCHA_SECRET_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
 RECAPTCHA_PUBLIC_KEY = os.environ.get('RECAPTCHA_PUBLIC_KEY')
-RECAPTCHA_PRIVATE_KEY = os.environ.get('GOOGLE_RECAPTCHA_SECRET_KEY')
-NOCAPTCHA = True
+
 
 try:
     from .local_settings import *
