@@ -87,6 +87,19 @@
 
 
 	<!-- Nav Bar END-->
+   {% if messages %}
+		{% for message in messages %}
+   		<div class="container mt-4">
+			<hr>
+		  <div class="alert {{ message.tags }} alert-dismissible mt-5" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+			{{ message }}
+		  </div>
+		</div>
+		{% endfor %}
+	{% endif %}
 
 
 <div data-spy="scroll" data-target="#list-example" data-offset="0" class="scrollspy-example">
@@ -169,20 +182,6 @@
 	<!-- contact info -->
 	<div id="contato">
 		<div class="titulo"><h1><span>Contatos</span></h1></div>
-
-
-	{% if messages %}
-
-		<div class="alert alert-success alert-dismissible fade show" role="alert">
-		  {% for message in messages %}<strong></strong>{{ message }}{% endfor %}
-		  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-<!--			<div id="alerta_mensagem">-->
-<!--			</div>-->
-
-	{% endif %}
 
 
 	<div class="row">
