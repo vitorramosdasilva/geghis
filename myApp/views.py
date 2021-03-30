@@ -17,20 +17,23 @@ def indexView(request):
             subject = form.cleaned_data['subject']
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
-            message = 'Assunto: ' + subject + '\n' + 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Messagem: ' + message
-            messages.success(request, 'E-mail enviado com sucesso.\nRetornaremos em até 48 horas úteis.')
-            try:
-                send_mail(subject,
-                          message,
-                          settings.EMAIL_HOST_USER,
-                          [settings.EMAIL_HOST_USER],
-                          fail_silently=False
-                          )
+            if not ("<a href" in message or "<img src" in message or ".txt" in message):
+                message = 'Assunto: ' + subject + '\n' + 'Name: ' + name + '\n' + 'Email: ' + email + '\n' + 'Messagem: ' + message
+                messages.success(request, 'E-mail enviado com sucesso.\nRetornaremos em até 48 horas úteis.', extra_tags='alert')
+                try:
+                    send_mail(subject,
+                              message,
+                              settings.EMAIL_HOST_USER,
+                              [settings.EMAIL_HOST_USER],
+                              fail_silently=False
+                              )
 
-                form = ContatoForm
-            except BadHeaderError:
-                messages.error(request, 'Erro ao enviar e-mail.\nTente Novamente e revise o conteúdo.')
-            return render(request, "index.html", {'form': form})
+                    form = ContatoForm
+                except BadHeaderError:
+                    messages.error(request, 'Erro ao enviar e-mail.\nTente Novamente e revise o conteúdo.', extra_tags='alert')
+                return render(request, "index.html", {'form': form})
+            else:
+                messages.error(request, 'Erro ao enviar e-mail.\nTente Novamente e revise o conteúdo.', extra_tags='alert')
     return render(request, "index.html", {'form': form})
 
 
