@@ -229,6 +229,7 @@
 						</div>
 
 	    					<div class="col-md-12">
+							
                                 <div class="form-group">
                                     <label for="{{ form.captcha.auto_id }}"></label>
                                     {% render_field form.captcha class="form-control" %}
@@ -236,6 +237,7 @@
                                         <span class="error"> {{ form.captcha.errors }} </span>
                                     {% endif %}
                                 </div>
+								
                             </div>
 
 						<div class="col-md-12">
@@ -246,6 +248,7 @@
 					</div>
 
 				</form>
+				
 				<div class="g-recaptcha" data-sitekey="{{ public_key }}" data-callback="recaptchaCallback" data-expired-callback="recaptchaExpiredCallback"></div>
 
 

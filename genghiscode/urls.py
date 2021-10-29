@@ -19,10 +19,19 @@ from django.urls import path, include
 from myApp.views import indexView
 from django.conf.urls.static import static
 from django.conf import settings
+from django.conf.urls import include, url
+from django.contrib.sitemaps.views import sitemap
+
+from myApp.sitemaps import Static_Sitemap
+
+sitemaps = {   
+    'static': Static_Sitemap(),
+}
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', indexView, name='index'),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler50x = 'myAapp.views.error_500'
